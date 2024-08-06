@@ -8,12 +8,33 @@
 </head>
 <body>
         
-    <form action = "day2.php" method = "get">
-        Enter Your Name: <input type = "text"  name = "username"><br>
-        Enter Your Age: <input type = "number" name = "age"><br>
-        <input type="submit">
+    <form action = "day2.php" method = "post">
+        <label> Enter Your First Name:  </label><br>
+       <input type = "text"  name = "Firstname"><br> 
+       <label> Enter Your Last Name:  </label><br>
+       <input type = "text"  name = "Lastname"><br>
+       <label> Enter Your email:  </label><br>
+       <input type = "email"  name = "email"><br> 
+       <label> Enter Your phone number:  </label><br>
+       <input type = "number"  name = "number"><br> 
+       <label> Enter Your Address:  </label><br>
+       <input type = "text"  name = "Address"><br> 
+        select your gender:  <br>
+       <input type="radio" id="female" name="gender" value="female">
+       <label for="female">Female</label><br>
+       <input type="radio" id="male" name="gender" value="male">
+       <label for="male">Male</label><br>
+       <input type="submit" name="submit" value="Submit">
        </form>
-    <?php  echo "Your name is"." ".$_GET["username"]. " " ."and" ?>
-    <?php  echo "your age is" . " ".  $_GET["age"]  ?>
+    <?php  
+    if(isset($_POST['submit'])){
+        echo "Your fist name is"." ".$_POST["Firstname" ]. " " ."," ;
+        echo "Your last name is"." ".$_POST["Lastname" ]. " " ."," ;
+        echo "Your email is"." ".$_POST["email" ]. " " ."," ;
+        echo "Your phone number is"." ".$_POST["number" ]. " " ."," ;
+        echo "Your address is"." ".$_POST["Address" ]. " " ."and" ;
+        echo "your gender is" . " ".  $_POST["gender"]  ;
+    }
+     ?>
 </body>
 </html>
